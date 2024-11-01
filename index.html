@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="balance-section">
+    <img src="main.png" alt="Logo" class="logo">
+    <div class="balance-display">
+      <h1><span id="balance">0</span> NOOP</h1>
+    </div>
+    <div class="buttons">
+      <button class="action-button" onclick="redirectTo('community')" id="communityButton">
+        <i class="fas fa-users"></i> Join our community
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <button class="action-button" onclick="redirectTo('joinX')" id="rewardsButton">
+        <i class="fas fa-star"></i> Join X
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Daily Login Reward Pop-up -->
+  <div class="reward-popup" id="rewardPopup">
+    <div class="reward-content">
+      <span class="emoji"><picture>
+  <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f381/512.webp" type="image/webp">
+  <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f381/512.gif" alt="🎁" width"62" height="62">
+</picture></span>
+      <p>Daily Reward: <span id="dailyReward">100</span> NOOP</p>
+      <button id="claimButton">Claim</button>
+    </div>
+  </div>
+
+  <!-- Referral Pop-up -->
+  <div class="referral-popup" id="referralPopup">
+    <div class="referral-content">
+      <p>No referral just share</p>
+      <input type="text" id="referralLink" readonly>
+      <button onclick="copyReferral()">Copy</button>
+      <button onclick="closePopup('referralPopup')">Close</button>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <div class="nav-item active" onclick="closePopup('rewardPopup')">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </div>
+    <div class="nav-item" onclick="openReferralPopup()">
+      <i class="fas fa-user-friends"></i>
+      <span>Refer</span>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
